@@ -1,3 +1,3 @@
-This repo contains LeetCode problems solved by me.
+This repo contains LeetCode problems solved by Ritesh
 
-The solutions included in this repo are in Java.
+The solutions included in this repo are coded in Java
