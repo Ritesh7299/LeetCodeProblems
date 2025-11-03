@@ -1,4 +1,4 @@
-package Utils;
+package common.utils;
 
 public class ListNode {
     public int val;
