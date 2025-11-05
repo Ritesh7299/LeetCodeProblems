@@ -46,7 +46,7 @@ public class FindXSumOfAllKLongSubarraysI {
                 if (bucketList[freq] == null) continue;
 
                 // Sort descending by value for tie-breaking
-                Collections.sort(bucketList[freq], Collections.reverseOrder());
+                bucketList[freq].sort(Collections.reverseOrder());
 
                 for (int num : bucketList[freq]) {
                     if (topX.size() < x) {
@@ -65,76 +65,4 @@ public class FindXSumOfAllKLongSubarraysI {
 
             return sum;
         }
-    //     Map<Integer, Integer> frequencyMap = new HashMap<>();
-    //     // Queue<Pair<Integer, List<Integer>>> pq = new PriorityQueue<>(
-    //     //     (a, b) -> a.getKey() - b.getKey()
-    //     // );
-    //     // Map<Integer, List<Integer>> buckets = new HashMap<>();
-
-    //     int maxFreq = 0;
-    //     for (int i = current; i < current + k; i++) {
-    //         frequencyMap.put(nums[i], frequencyMap.getOrDefault(nums[i], 0) + 1);
-    //         maxFreq = Math.max(maxFreq, frequencyMap.get(nums[i]));
-    //     }
-
-    //     // int maxFrequency = 0;
-    //     // for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
-    //     //     // pq.offer(entry);
-
-    //     //     buckets.getOrDefault(entry.getValue(), new IntegerList<>()).add(entry.getKey());
-    //     // }
-
-    //     List<Integer>[] bucketList = new ArrayList[maxFreq + 1];
-
-    //     for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
-    //         int num = entry.getKey();
-    //         int freq = entry.getValue();
-
-    //         if (bucketList[freq] == null) {
-    //             bucketList[freq] = new ArrayList<>();
-    //         }
-
-    //         bucketList[freq].add(num);
-    //     }
-
-    //     List<Integer> topX = new ArrayList<>();
-    //     int i = bucketList.length - 1;
-
-    //     while (topX.size() < x) {
-    //         List<Integer> list = bucketList[i];
-
-    //         if (list.size() <= 0) {
-    //             i--;
-    //             continue;
-    //         }
-
-    //         if (topX.size() + list.size() < x) {
-    //             for (int n : list) {
-    //                 topX.add(n);
-    //             }
-    //         } else {
-    //             Collections.sort(list);
-    //             int j = list.size() - 1;
-
-    //             while (topX.size() < x) {
-    //                 topX.add(j--);
-    //             }
-    //         }
-
-    //         i--;
-    //     }
-
-
-    //     // while (topX.size() < x) {
-    //     //     topX.add(pq.poll().getKey());
-    //     // }
-
-    //     int sum = 0;
-
-    //     for (int n : topX) {
-    //         sum += n * frequencyMap.get(n);
-    //     }
-
-    //     return sum;
-
 }
